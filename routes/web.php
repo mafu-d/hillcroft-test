@@ -15,3 +15,4 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', [ProductsController::class, 'index'])->name('home');
+Route::post('/upload', [ProductsController::class, 'upload'])->name('upload');

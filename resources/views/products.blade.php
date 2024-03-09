@@ -12,6 +12,24 @@
 <body>
     <h1>Hillcroft Test - Matt Dawkins</h1>
 
+    <form action="{{ route('upload') }}" method="POST" enctype="multipart/form-data">
+        @csrf
+        <p>
+            <label for="file">Upload XML file:</label>
+            <input type="file" name="file" id="file">
+            @if ($errors->has('file'))
+                <span class="error">{{ $errors->first('file') }}</span>
+            @endif
+        </p>
+        <p><button>Upload</button></p>
+
+        @if (session('success'))
+            <p class="success">{{ session('success') }}</p>
+        @endif
+    </form>
+
+    <hr>
+
     <div class="products">
         @foreach ($products as $product)
             <div class="product">
@@ -28,7 +46,6 @@
     </div>
 
     {{ $products->links('vendor.pagination.default') }}
-
 </body>
 
 </html>
