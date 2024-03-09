@@ -26,6 +26,7 @@ DB_PASSWORD=password
 - `sail artisan migrate`
 - `sail npm install` (or `npm install` if you have NPM installed locally) to install other dependencies
 - `sail npm run dev` to start the Vite server
+- `sail artisan queue:work` to process the queue (imports uploaded XML files and sends emails)
 - Open http://127.0.0.1 in your browser
 - To preview emails sent by the application, open http://localhost:8025/ in your browser
 

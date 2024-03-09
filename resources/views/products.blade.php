@@ -34,8 +34,9 @@
         @foreach ($products as $product)
             <div class="product">
                 <h2>{{ $product->name }}</h2>
-                <p>{{ $product->code }}</p>
-                <p>{{ $product->category->name }}</p>
+                <p>Code: {{ $product->code }}</p>
+                <p>Category: {{ $product->category->name }}</p>
+                <p>Stock: {{ $product->stock }}</p>
                 <p>{{ $product->short_description }}</p>
                 <p>
                     £{{ number_format($product->price_inc_vat, 2) }}

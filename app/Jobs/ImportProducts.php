@@ -11,6 +11,8 @@ use Illuminate\Queue\InteractsWithQueue;
 use Illuminate\Queue\SerializesModels;
 use Flowgistics\XML\XML;
 use Illuminate\Support\Facades\Log;
+use Illuminate\Support\Facades\Mail;
+use App\Mail\ProductsUploaded;
 
 class ImportProducts implements ShouldQueue
 {
@@ -43,5 +45,7 @@ class ImportProducts implements ShouldQueue
             $product->category_id = $category->id;
             $product->save();
         }
+
+        Mail::send(new ProductsUploaded());
     }
 }
