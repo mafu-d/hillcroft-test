@@ -17,6 +17,7 @@
             <div class="product">
                 <h2>{{ $product->name }}</h2>
                 <p>{{ $product->code }}</p>
+                <p>{{ $product->category->name }}</p>
                 <p>{{ $product->short_description }}</p>
                 <p>
                     £{{ number_format($product->price_inc_vat, 2) }}
