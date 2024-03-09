@@ -26,7 +26,8 @@
         @endforeach
     </div>
 
-    {{ $products->links() }}
+    {{ $products->links('vendor.pagination.default') }}
+
 </body>
 
 </html>
