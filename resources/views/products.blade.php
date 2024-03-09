@@ -18,10 +18,15 @@
                 <h2>{{ $product->name }}</h2>
                 <p>{{ $product->code }}</p>
                 <p>{{ $product->short_description }}</p>
-                <p>£{{ number_format($product->price_inc_vat, 2) }} (£{{ number_format($product->price_ex_vat, 2) }} ex VAT)</p>
+                <p>
+                    £{{ number_format($product->price_inc_vat, 2) }}
+                    (£{{ number_format($product->price_ex_vat, 2) }} ex VAT)
+                </p>
             </div>
         @endforeach
     </div>
+
+    {{ $products->links() }}
 </body>
 
 </html>
